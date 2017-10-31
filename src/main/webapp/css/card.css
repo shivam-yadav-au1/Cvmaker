@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+
+}
+
+.card {
+    width: 360px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 5px;
+    
+}
+
+.circle {
+
+    height: 100px;
+    width: 100px;
+    background-color: darkgrey;
+    border-radius: 50%;
+    margin-bottom: -30px;
+    /*margin-left: 40%;*/
+    z-index: 1;
+    position: relative;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 360px;
+    background-color: var(--primary-color);
+    /*opacity: 0.1;*/
+    left: 0%;
+    top: 0%;
+    transform: translateY(-100%);
+    border-radius: 5px;
+}
+
+
+@media only screen and (min-width: 360px) {
+
+    .card {
+        width: 360px;
+        height: 100px;
+    }
+    .card:before {
+        height: 100px;
+    }
+
+    .circle {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media only screen and (min-width: 520px) {
+
+    .card {
+        width: 400px;
+        height: 150px;
+    }
+    .card:before {
+        width: 400px;
+        height: 150px;
+    }
+    .circle {
+        height: 150px;
+        width: 150px;
+        /*margin-left: 23%;*/
+    }
+}
+
+@media only screen and (min-width: 720px) {
+
+    .card {
+        width: 600px;
+        height: 200px;
+    }
+    .card:before {
+        width: 600px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+
+    .card {
+        width: 800px;
+        height: 200px;
+    }
+    .card:before {
+        width: 800px;
+        height: 200px;
+    }
+    .container {
+        margin-top: 8%;
+    }
+}

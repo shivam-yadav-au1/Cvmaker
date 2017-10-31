@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    min-height: 48px;
+    min-width: 48px;
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.custom-btn{
+	min-height: 30px;
+	min-width: 100px;
+	border-radius: 3px;
+	border-style: none;
+}
+
+.btn.btn-primary {
+    width: 100px;
+	background-color: var(--secondary-color);
+}
+
+.btn.btn-secondary {
+    width: 100px;
+    background-color: var(--primary-color);
+}
+.custom-btn.btn-primary{
+	background-color: var(--secondary-color);
+}
+.custom-btn.btn-secondary{
+	 background-color: var(--primary-color);
+}
