@@ -1,8 +1,8 @@
-<!-- Main Container Start-->
+ <!-- Main Container Start-->
     <div class="main-container">
 
         <!-- Form container Start-->
-        <div class="form-card">
+        <div class="form-card ">
 
             <h2>Experience</h2>
             <div class="experience-container">
@@ -31,9 +31,6 @@
 
                 <label>Describe your roll in company</label>
                 <textarea rows="4" columns="50"></textarea>
-                
-                
-                <input type="hidden" name="nextFragmentName" value="skill">
 
                 <!-- Button container start-->
                 <div class="button-container">
@@ -41,13 +38,11 @@
                 	<!-- <div  id="add" class="add-button">
             				<h1>+</h1>
             		</div> -->
-            		<button onclick="myFunction()" class="add-button" >
-            			<a href=""><h1>+</h1></a>
-            		</button>
+            		<input class="btn btn-primary" type="submit" name="action" value="Add More">
 
-            		
-					
-                   <input onclick="getText()" class="btn btn-primary" type="submit" name="action" value="Next">
+            		<input type="hidden" name="nextFragmentName" value="skill">	
+
+                   <input onclick="getText()" class="btn btn-primary" type="submit" name="Next" value="Next">
                     
 
                 </div>

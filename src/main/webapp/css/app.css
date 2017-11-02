@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+
 .main-container{
     display: flex;
     flex-direction: column;
@@ -16,17 +23,6 @@
     justify-content: space-around;
     background-color: lightgreen;
 }
-
-/* .contact-container {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 10px;
-    background-color: white;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-} */
-
 .contact-container .item {
     margin-left: 10px;
 }

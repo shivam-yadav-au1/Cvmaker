@@ -24,6 +24,7 @@ public class FormServlet extends HttpServlet {
 				req.getParameter("nextFragmentName") == null ? "introduction" : req.getParameter("nextFragmentName"));
 
 		req.getServletContext().getRequestDispatcher(view).forward(req, resp);
+		
 	}
 
 }
