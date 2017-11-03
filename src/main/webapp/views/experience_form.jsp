@@ -16,33 +16,30 @@
             <form class="">
 
                 <label>Company</label>
-                <input id="companyname" type="text" name="Company" placeholder="Company">
+                <input id="companyname" type="text" name="company" placeholder="Company">
 
                 <label>Designation</label>
-                <input type="text" name="name" placeholder="Designation">
+                <input type="text" name="designation" placeholder="Designation">
 
                 <div class="date-container">
                     <label>From</label>
-                    <input type="date" name="date">
+                    <input type="date" name="fromDate">
 
                     <label>To</label>
-                    <input type="date" name="date">
+                    <input type="date" name="toDate">
                 </div>
 
                 <label>Describe your roll in company</label>
-                <textarea rows="4" columns="50"></textarea>
+                <textarea name="roll" rows="4" columns="50"></textarea>
+                
+                <input type="hidden" name="nextFragmentName" value="experience">	 
 
                 <!-- Button container start-->
                 <div class="button-container">
 
-                	<!-- <div  id="add" class="add-button">
-            				<h1>+</h1>
-            		</div> -->
+                
             		<input class="btn btn-primary" type="submit" name="action" value="Add More">
-
-            		<input type="hidden" name="nextFragmentName" value="skill">	
-
-                   <input onclick="getText()" class="btn btn-primary" type="submit" name="Next" value="Next">
+					<input class="btn btn-primary" type="submit" name="action" value="Next">
                     
 
                 </div>

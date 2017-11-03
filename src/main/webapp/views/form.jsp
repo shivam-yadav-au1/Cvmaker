@@ -11,11 +11,12 @@
 
 		<jsp:include page="/views/header.jsp"></jsp:include>
 		
-		<%-- <c:out value="Fragment Name:${fragmentName}"></c:out> --%>
+		
 		
 		<c:if test="${fragmentName eq 'introduction'}">	
 			<jsp:include page="/views/introduction_form.jsp"></jsp:include>
 		</c:if>
+		
 		<c:if test="${fragmentName eq 'contact'}">
 			<jsp:include page="/views/contact_form.jsp"></jsp:include>	
 		</c:if>

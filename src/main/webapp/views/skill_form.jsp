@@ -93,14 +93,14 @@
 						
 					</select>
 				</div>
-				
+				<input type="hidden" name="nextFragmentName" value="skill">
 				
 				<!-- Button container start-->
 				<div class="button-container ">
-
+				
 					<input type="submit" class="btn btn-primary" name="action" value="Add More">
-
-					<input  class="btn btn-primary" type="submit" name="Next" value="Next">
+					<input  class="btn btn-primary" type="submit" name="action" value="Submit">
+					
 				</div>
 				<!-- Button container End-->
 				

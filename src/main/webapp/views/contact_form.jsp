@@ -8,17 +8,20 @@
 			<form class=""> 
 			
 				<label>Email</label>
-				<input type="text" name="name" placeholder="Email">
+				<input type="text" name="email" placeholder="Email">
 
 				<label>Phone No</label>
-				<input type="text" name="name" placeholder="Phone Number">
+				<input type="text" name="phone" placeholder="Phone Number">
 
 				<label>Link/Website</label>
-				<input type="text" name="name" placeholder="Link/Website">
+				<input type="text" name="link" placeholder="Link/Website">
+				
+				 <input type="hidden" name="nextFragmentName" value="contact"> 
 				
 				<!-- Button container start-->
 				<div class="button-container ">
-					<input type="hidden" name="nextFragmentName" value="experience">
+					
+					<input  class="btn btn-primary" type="submit" name="action" value="Save">
 					<input  class="btn btn-primary" type="submit" name="action" value="Next">
 				</div>
 				<!-- Button container End-->
