@@ -8,31 +8,44 @@
 </head>
 <body>
 
+<div id="message">
 
-		<jsp:include page="/views/header.jsp"></jsp:include>
-		
-		
-		
-		<c:if test="${fragmentName eq 'introduction'}">	
-			<jsp:include page="/views/introduction_form.jsp"></jsp:include>
-		</c:if>
-		
-		<c:if test="${fragmentName eq 'contact'}">
-			<jsp:include page="/views/contact_form.jsp"></jsp:include>	
-		</c:if>
-		
-		<c:if test="${fragmentName eq 'experience'}">
-				<jsp:include page="/views/experience_form.jsp"></jsp:include>		
-		</c:if>
-	
-		<c:if test="${fragmentName eq 'skill'}">
-		
-			<jsp:include page="/views/skill_form.jsp"></jsp:include>	
-		</c:if>
-	
-	
-	
-	
-	
+ 	 <ul>
+	 	<c:forEach items="${messages}" var="message">
+	 		<li>${message}</li>
+		</c:forEach>
+	</ul> 
+</div>
+<jsp:include page="/views/header.jsp"></jsp:include>
+
+			
+ 			<div class="main-container">
+ 			
+ 			<!--  	<h4>"${message}"</h4> -->
+ 				<!-- Form container Start-->
+					<form action="${pageContext.request.contextPath}/formServlet" method="get">
+							
+							<jsp:include page="/views/introduction_form.jsp"></jsp:include>
+							
+							<jsp:include page="/views/contact_form.jsp"></jsp:include>
+							
+							<jsp:include page="/views/experience_form.jsp"></jsp:include>
+							
+							<jsp:include page="/views/skill_form.jsp"></jsp:include>
+							
+							<!--  Button Container -->
+							
+							<div class="button-container">
+							
+								<!-- <input type="submit" class="btn btn-primary" name="action" value="Add More"> -->
+								<input  class="btn btn-primary" type="submit" name="action" value="Submit">
+								
+							</div> 
+							
+							<!-- Button container End-->
+						
+					</form>
+				<!-- Form container End-->
+			</div>
 </body>
 </html>

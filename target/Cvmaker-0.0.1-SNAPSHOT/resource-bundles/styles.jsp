@@ -1,0 +1,11 @@
+<link href="./css/app.css" rel="stylesheet">
+<link href="./css/buttons.css" rel="stylesheet">
+<link href="./css/card.css" rel="stylesheet">
+<link href="./css/contact.css" rel="stylesheet">
+<link href="./css/debug.css" rel="stylesheet">
+<link href="./css/education.css" rel="stylesheet">
+<link href="./css/experience.css" rel="stylesheet">
+<link href="./css/form.css" rel="stylesheet">
+<link href="./css/header.css" rel="stylesheet">
+<link href="./css/skill.css" rel="stylesheet">
+<link href="./css/theme.css" rel="stylesheet">
