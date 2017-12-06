@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <div id="message">
 
  	 <ul>
@@ -16,12 +15,15 @@
 		</c:forEach>
 	</ul> 
 </div>
+
 <jsp:include page="/views/header.jsp"></jsp:include>
+
+
 
 			
  			<div class="main-container">
  			
- 			<!--  	<h4>"${message}"</h4> -->
+ 			
  				<!-- Form container Start-->
 					<form action="${pageContext.request.contextPath}/formServlet" method="get">
 							

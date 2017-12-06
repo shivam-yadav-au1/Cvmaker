@@ -31,7 +31,7 @@
 						  
 					</select>
 					<label>Profeciency</label>
-					<select name="Profeciency">
+					<select name="profeciency">
 						<option value="Beginner">Beginner</option>
 						<option value="Intermediate">Intermediate</option>
 						<option value="Expert">Expert</option>

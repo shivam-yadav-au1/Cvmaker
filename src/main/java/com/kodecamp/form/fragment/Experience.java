@@ -6,17 +6,17 @@ public class Experience {
 
 	private String company;
 	private String designation;
-	private Date fromDate;
-	private Date toDate;
+	private String  fromDate;
+	private String toDate;
 	private String roll;
 
-	public Experience(final String company, final String designation, final Date fromDate
-			,final Date toDate, final String roll) {
-		
+	public Experience(final String company, final String designation, final String  fromDate
+			,final String toDate, final String roll) {
 		
 		this.company = company;
 		this.designation = designation;
 		this.fromDate = fromDate;
+		this.toDate = toDate;
 		this.roll = roll;
 	}
 
@@ -28,17 +28,22 @@ public class Experience {
 		return designation;
 	}
 
-	public Date getFromDate() {
+	public String getFromDate() {
 		return fromDate;
 	}
 
-	public Date getToDate() {
+	public String getToDate() {
 		return toDate;
 	}
 
 
 	public String getRoll() {
 		return roll;
+	}
+	
+	@Override
+	public String toString() {
+		return this.company + " "+this.designation+" "+this.fromDate+" "+toDate+" "+this.roll;
 	}
 
 }

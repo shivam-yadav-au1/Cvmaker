@@ -37,14 +37,14 @@
               
 
                 <!-- Button container start-->
-               <!--  <div class="button-container">
+                <div class="button-container">
 
                 
             		<input class="btn btn-primary" type="submit" name="action" value="Add More">
-					<input class="btn btn-primary" type="submit" name="action" value="Next">
+					<!-- <input class="btn btn-primary" type="submit" name="action" value="Next"> -->
                     
 
-                </div> -->
+                </div> 
                 <!-- Button container End-->
 
            
