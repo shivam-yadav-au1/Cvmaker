@@ -1,4 +1,4 @@
-
+<%@ include file="/resource-bundles/directives.jsp"%>
 
         <!-- Form container Start-->
         <div class="form-card ">
@@ -6,9 +6,11 @@
             <h2>Experience</h2>
             <div class="experience-container">
             	<div class="item">
-            		<!-- <h1>asdohadsl;fn;l</h1>
-            		<h1>asdohadsl;fn;l</h1>
-            		<h1>asdohadsl;fn;l</h1> -->
+            		 <ul>
+            			<c:forEach items="${experienceList}" var="item">
+  							${item}<br>
+						</c:forEach>
+            		</ul> 
             	</div>
             </div>
            

@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kodecamp.Validation.impl.DateRangeValidation;
 import com.kodecamp.Validation.impl.DateValidation;
@@ -41,17 +42,24 @@ public class FormServlet extends HttpServlet {
 	}
 
 	@Override
+	protected void doPost(HttpServletRequest req,HttpServletResponse resp)throws ServletException,IOException {
+		doGet(req,resp);
+	}
+	
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String action = req.getParameter("action") == null ? (String) req.getAttribute("action")
 				: req.getParameter("action");
 		
 		List messageList = new ArrayList();
-		List<Experience> experienceList = new ArrayList<Experience>();
+		HttpSession session = req.getSession();
+		
 		
 	
 		
 		//if action is equal to submit
+		
 		if ("Submit".equals(action)) {
 			System.out.println("Submit block executed ....");
 			if(partOneValidation(req.getParameter("name"),req.getParameter("profession"),messageList)
@@ -74,11 +82,25 @@ public class FormServlet extends HttpServlet {
 		if("Add More".equals(action)) {
 		
 			if(partThreeValidation(req.getParameter("company"),req.getParameter("designation"),req.getParameter("fromDate"),req.getParameter("toDate"),req.getParameter("roll"),messageList)) {
+				
 				Experience exp = new Experience(req.getParameter("company"),req.getParameter("designation")
 						,req.getParameter("fromDate"),req.getParameter("toDate"),req.getParameter("roll"));
 				
-					boolean isAdded = experienceList.add(exp);
-					System.out.println("Experience List size is  :"+experienceList.size());
+				// Adding experience object in experience List 
+				List<Experience> experienceList = (List<Experience>) session.getAttribute("experienceList");
+				
+					if(experienceList == null) {
+						
+						System.out.println("experience list is null");
+						experienceList = new ArrayList<Experience>();
+						
+					}
+					boolean flag = experienceList.add(exp);
+					System.out.println("Item added successfully : "+flag);
+					session.setAttribute("experienceList", experienceList);
+					req.setAttribute("experienceList", experienceList);
+					
+					
 					Iterator<Experience> itr = experienceList.iterator();
 					while(itr.hasNext()) {
 						System.out.println(itr.next());

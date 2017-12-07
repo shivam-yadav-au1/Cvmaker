@@ -14,6 +14,7 @@
 	 		<li>${message}</li>
 		</c:forEach>
 	</ul> 
+	
 </div>
 
 <jsp:include page="/views/header.jsp"></jsp:include>
@@ -25,7 +26,7 @@
  			
  			
  				<!-- Form container Start-->
-					<form action="${pageContext.request.contextPath}/formServlet" method="get">
+					<form action="${pageContext.request.contextPath}/formServlet" method="post">
 							
 							<jsp:include page="/views/introduction_form.jsp"></jsp:include>
 							
