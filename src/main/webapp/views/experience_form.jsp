@@ -4,11 +4,13 @@
         <div class="form-card ">
 
             <h2>Experience</h2>
+            <!-- After adding experience in list it is shown below  -->
+            
             <div class="experience-container">
             	<div class="item">
             		 <ul>
-            			<c:forEach items="${experienceList}" var="item">
-  							${item}<br>
+            			<c:forEach items="${expMap}" var="itemMap">
+            				<c:out value="${itemMap.key}"/> : <c:out value="${itemMap.value}"/><br>
 						</c:forEach>
             		</ul> 
             	</div>

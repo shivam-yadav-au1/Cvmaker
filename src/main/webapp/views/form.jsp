@@ -26,7 +26,7 @@
  			
  			
  				<!-- Form container Start-->
-					<form action="${pageContext.request.contextPath}/formServlet" method="post">
+					<form action="${pageContext.request.contextPath}/formServlet" method="get">
 							
 							<jsp:include page="/views/introduction_form.jsp"></jsp:include>
 							

@@ -27,33 +27,33 @@ import com.kodecamp.form.fragment.FragmentDetails;
 import com.kodecamp.form.fragment.FragmentNavigation;
 import com.kodecamp.form.fragment.IFragmentCommand;
 import com.kodecamp.form.fragment.RouteDetails;
-
-
-
+import com.kodecamp.model.ExperienceModel;
 import com.kodecamp.validationapi.IValidationResult;
 import com.kodecamp.validationapi.ValidationResult;
 
 
 public class FormServlet extends HttpServlet {
 
-
+	
 	public FormServlet() {
 		System.out.println(getClass().getName());
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req,HttpServletResponse resp)throws ServletException,IOException {
-		doGet(req,resp);
+//		doGet(req,resp);
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		System.out.println("doGet() : "+getClass().getName());
 		String action = req.getParameter("action") == null ? (String) req.getAttribute("action")
 				: req.getParameter("action");
 		
+		int id = 1;
 		List messageList = new ArrayList();
 		HttpSession session = req.getSession();
+
 		
 		
 	
@@ -82,29 +82,25 @@ public class FormServlet extends HttpServlet {
 		if("Add More".equals(action)) {
 		
 			if(partThreeValidation(req.getParameter("company"),req.getParameter("designation"),req.getParameter("fromDate"),req.getParameter("toDate"),req.getParameter("roll"),messageList)) {
-				
+			
+				String expId = String.valueOf(id);
 				Experience exp = new Experience(req.getParameter("company"),req.getParameter("designation")
 						,req.getParameter("fromDate"),req.getParameter("toDate"),req.getParameter("roll"));
 				
-				// Adding experience object in experience List 
-				List<Experience> experienceList = (List<Experience>) session.getAttribute("experienceList");
+		
 				
-					if(experienceList == null) {
-						
-						System.out.println("experience list is null");
-						experienceList = new ArrayList<Experience>();
-						
-					}
-					boolean flag = experienceList.add(exp);
-					System.out.println("Item added successfully : "+flag);
-					session.setAttribute("experienceList", experienceList);
-					req.setAttribute("experienceList", experienceList);
-					
-					
-					Iterator<Experience> itr = experienceList.iterator();
-					while(itr.hasNext()) {
-						System.out.println(itr.next());
-					}
+				ExperienceModel expModel = (ExperienceModel) session.getAttribute("expModel");
+				if(expModel == null) {
+				
+					expModel = new ExperienceModel(req);
+				}
+				
+				expModel.addExperience(exp);
+				session.setAttribute("expModel",expModel);
+				
+		
+				
+			
 			}
 			
 		}
