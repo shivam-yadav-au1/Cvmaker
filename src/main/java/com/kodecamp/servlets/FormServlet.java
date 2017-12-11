@@ -27,7 +27,9 @@ import com.kodecamp.form.fragment.FragmentDetails;
 import com.kodecamp.form.fragment.FragmentNavigation;
 import com.kodecamp.form.fragment.IFragmentCommand;
 import com.kodecamp.form.fragment.RouteDetails;
+import com.kodecamp.form.fragment.Skill;
 import com.kodecamp.model.ExperienceModel;
+import com.kodecamp.model.SkillModel;
 import com.kodecamp.validationapi.IValidationResult;
 import com.kodecamp.validationapi.ValidationResult;
 
@@ -49,8 +51,12 @@ public class FormServlet extends HttpServlet {
 		System.out.println("doGet() : "+getClass().getName());
 		String action = req.getParameter("action") == null ? (String) req.getAttribute("action")
 				: req.getParameter("action");
+		String id = req.getParameter("id");
+		String expButton = req.getParameter("buttonexp");
+		String skillButton = req.getParameter("buttonskill");
 		
-		int id = 1;
+		
+		
 		List messageList = new ArrayList();
 		HttpSession session = req.getSession();
 
@@ -61,7 +67,7 @@ public class FormServlet extends HttpServlet {
 		//if action is equal to submit
 		
 		if ("Submit".equals(action)) {
-			System.out.println("Submit block executed ....");
+
 			if(partOneValidation(req.getParameter("name"),req.getParameter("profession"),messageList)
 					&& partTwoValidation(req.getParameter("email"),req.getParameter("phone"),req.getParameter("link"),messageList) 
 					&& partThreeValidation(req.getParameter("company"),req.getParameter("designation"),req.getParameter("fromDate"),req.getParameter("toDate"),req.getParameter("roll"),messageList) 
@@ -79,7 +85,7 @@ public class FormServlet extends HttpServlet {
 		}
 		
 		// if Action is equal to Add More
-		if("Add More".equals(action)) {
+		if("Add More".equals(expButton)) {
 		
 			if(partThreeValidation(req.getParameter("company"),req.getParameter("designation"),req.getParameter("fromDate"),req.getParameter("toDate"),req.getParameter("roll"),messageList)) {
 			
@@ -105,6 +111,50 @@ public class FormServlet extends HttpServlet {
 			
 		}
 		
+		// if Add More of skill form is clicked 
+		
+		if("Add More".equals(skillButton)) {
+			
+			
+			if(partFourValidation(req.getParameter("skills"),req.getParameter("profeciency"),req.getParameter("year"),req.getParameter("months"),messageList)) {
+				
+			
+				
+				Skill skill = new Skill(req.getParameter("skills"),req.getParameter("profeciency"),req.getParameter("year"),req.getParameter("months"));
+			
+				
+				SkillModel skillModel = (SkillModel) session.getAttribute("skillModel");
+				
+				if(skillModel == null) {
+					skillModel = new SkillModel(req);
+				}
+				
+				skillModel.addSkill(skill);
+				session.setAttribute("skillModel",skillModel);
+		
+			}
+		}
+		
+		if("Delete".equals(action)) {
+			
+
+			
+			ExperienceModel expModel = (ExperienceModel)session.getAttribute("expModel");
+			if(expModel == null) {
+				expModel = new ExperienceModel(req);
+			}
+			expModel.deleteExperience(id);
+		}
+		
+		if("DeleteSkill".equals(action)){
+		
+			SkillModel  skillModel = (SkillModel) session.getAttribute("skillModel");
+			if(skillModel == null) {
+				skillModel = new SkillModel(req);
+			}
+			skillModel.deleteSkill(id);
+		}
+		
 		req.getServletContext().getRequestDispatcher("/views/form.jsp").forward(req, resp);
 
 	}
@@ -112,7 +162,7 @@ public class FormServlet extends HttpServlet {
 	/*
 	 * Skills Validation
 	 */
-	private boolean partFourValidation(final String skillname,final String profeciency,final String experience,final String months,List messageList) {
+	private boolean partFourValidation(final String skillname,final String profeciency,final String year,final String months,List messageList) {
 		
 		System.out.println("Part Four Validation called ");
 		
@@ -131,7 +181,7 @@ public class FormServlet extends HttpServlet {
 			messageList.add(vr.message());
 		}
 		
-		vr = new EmptyValidator(new NullValidator()).validate(experience);
+		vr = new EmptyValidator(new NullValidator()).validate(year);
 		if(vr.status().equals(ValidationResult.Status.FAIL)) {
 			flag = false;
 			messageList.add(vr.message());

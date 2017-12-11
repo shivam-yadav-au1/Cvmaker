@@ -6,11 +6,13 @@
             <h2>Experience</h2>
             <!-- After adding experience in list it is shown below  -->
             
-            <div class="experience-container">
+            <div class="experience-container" id="experience">
             	<div class="item">
             		 <ul>
             			<c:forEach items="${expMap}" var="itemMap">
-            				<c:out value="${itemMap.key}"/> : <c:out value="${itemMap.value}"/><br>
+            				<c:out value="${itemMap.key}"/> : <c:out value="${itemMap.value}"/>
+            				<a href="${pageContext.request.contextPath}/formServlet?id=${itemMap.key}&action=Delete">Delete</a><br>
+            				
 						</c:forEach>
             		</ul> 
             	</div>
@@ -44,7 +46,7 @@
                 <div class="button-container">
 
                 
-            		<input class="btn btn-primary" type="submit" name="action" value="Add More">
+            		<input class="btn btn-primary" id="experience" type="submit" name="buttonexp" value="Add More">
 					<!-- <input class="btn btn-primary" type="submit" name="action" value="Next"> -->
                     
 

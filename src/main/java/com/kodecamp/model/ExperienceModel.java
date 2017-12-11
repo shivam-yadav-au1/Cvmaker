@@ -1,6 +1,6 @@
 package com.kodecamp.model;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,18 +22,28 @@ public class ExperienceModel {
 		
 	}
 	
+	public HttpSession getSession() {
+		HttpSession session = req.getSession();
+		return session;
+		
+	}
+	
 	public void deleteExperience(String index) {
 		int experienceListIndex = Integer.parseInt(index);
 		
-		HttpSession session = req.getSession();
-		List<Experience> experienceList = (List<Experience>) session.getAttribute("experienceList");
+		HttpSession session = getSession();
+		Map<Integer,Experience> expMap = (Map<Integer, Experience>) session.getAttribute("expMap");
+		if(expMap == null) {
+			System.out.println("ExpMap is null so no value to delete .");
+		}
 		
-		experienceList.remove(experienceListIndex);
+		expMap.remove(experienceListIndex);
+		
 	}
 	
 	public void addExperience(Experience exp) {
 		
-		HttpSession session = req.getSession();
+		HttpSession session = getSession();
 		
 		
 		Map<Integer,Experience> expMap = (Map<Integer, Experience>) session.getAttribute("expMap");

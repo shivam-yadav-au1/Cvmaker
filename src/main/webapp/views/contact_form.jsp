@@ -1,7 +1,7 @@
 
 		<!-- Form container Start-->
 
-		<div class="form-card">
+		<div class="form-card" id="Contact">
 			<h2>Contact</h2>
 			
 				

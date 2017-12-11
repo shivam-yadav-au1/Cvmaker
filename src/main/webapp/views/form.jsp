@@ -50,5 +50,34 @@
 					</form>
 				<!-- Form container End-->
 			</div>
+			
+			<script>
+			const buttons = document.querySelectorAll('button[data-expId]');
+			console.log(buttons.length);
+			buttons.forEach((button)=>{
+				button.addEventListener("click",interceptSubmission);
+			});
+
+			
+
+			function interceptSubmission(event) {
+		
+				event.preventDefault();
+				// value of this
+				const value = this.attributes['data-expId'].nodeValue;
+				const hiddenText = document.querySelector("#selectedValue");
+				hiddenText.value = value;
+				// console.log("value is " + value);
+				console.dir(value);
+				document.querySelector("#action").value="delete";
+
+				
+				
+				// console.log('value set..');
+				document.querySelector('#experienceForm').submit();
+				// return false;
+			}
+			
+			</script>
 </body>
 </html>
