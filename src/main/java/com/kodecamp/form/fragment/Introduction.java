@@ -18,4 +18,10 @@ public class Introduction {
 		return profession;
 	}
 
+	@Override
+	public String toString() {
+		return "Name : "+this.name+" Profession :  "+profession;
+	}
+	
+	
 }

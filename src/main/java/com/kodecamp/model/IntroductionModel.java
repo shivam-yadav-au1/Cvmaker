@@ -19,7 +19,7 @@ public class IntroductionModel {
 		return session;
 	}
 	
-	private void addIntroduction(final String name,final String profession) {
+	public void addIntroduction(final String name,final String profession) {
 		HttpSession session = getSession();
 		
 		Introduction intro = (Introduction) session.getAttribute("intro");

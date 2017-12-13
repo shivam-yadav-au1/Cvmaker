@@ -1,4 +1,4 @@
-
+<%@ include file="/resource-bundles/directives.jsp"%>
 		<!-- Form container Start-->
 
 		<div class="form-card" id="Contact">
@@ -7,13 +7,13 @@
 				
 				
 				<label>Email</label>
-				<input type="text" name="email" placeholder="Email">
+				<input type="text" name="email" placeholder="Email" value="${contact.email}">
 
 				<label>Phone No</label>
-				<input type="text" name="phone" placeholder="Phone Number">
+				<input type="text" name="phone" placeholder="Phone Number" value="${contact.phone}">
 
 				<label>Link/Website</label>
-				<input type="text" name="link" placeholder="Link/Website">
+				<input type="text" name="link" placeholder="Link/Website" value="${contact.link}">
 				
 				
 				

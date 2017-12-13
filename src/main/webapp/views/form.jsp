@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div id="message">
+<%--  <div id="message">
 
  	 <ul>
 	 	<c:forEach items="${messages}" var="message">
@@ -15,7 +15,7 @@
 		</c:forEach>
 	</ul> 
 	
-</div>
+</div>  --%>
 
 <jsp:include page="/views/header.jsp"></jsp:include>
 

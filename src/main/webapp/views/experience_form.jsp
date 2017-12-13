@@ -22,21 +22,21 @@
 				
 				
                 <label>Company</label>
-                <input id="companyname" type="text" name="company" placeholder="Company">
+                <input id="companyname" type="text" name="company" placeholder="Company" value="${exp.company}">
 
                 <label>Designation</label>
-                <input type="text" name="designation" placeholder="Designation">
+                <input type="text" name="designation" placeholder="Designation" value="${exp.designation}">
 
                 <div class="date-container">
                     <label>From</label>
-                    <input type="date" name="fromDate">
+                    <input type="date" name="fromDate" value="${exp.fromDate}">
 
                     <label>To</label>
-                    <input type="date" name="toDate">
+                    <input type="date" name="toDate" value="${exp.toDate}">
                 </div>
 
                 <label>Describe your roll in company</label>
-                <textarea name="roll" rows="4" cols="40"></textarea>
+                <textarea name="roll" rows="4" cols="40" value="${exp.roll}"></textarea>
                 
              
                 

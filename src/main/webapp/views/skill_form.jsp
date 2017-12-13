@@ -16,7 +16,7 @@
 			
 		    </c:forEach>
 
-		<select name="skills">
+		<select name="skills" >
 
 			<option value="SELECT SKILLS">SELECT SKILLS</option>
 			<option value="Java">Java</option>
@@ -37,12 +37,18 @@
 			<option value=".NET">.NET</option>
 			<option value="OTHER">OTHER</option>
 
-		</select> <label>Profeciency</label> <select name="profeciency">
+		</select>
+		 <label>Profeciency</label>
+		  <select name="profeciency" >
 			<option value="Beginner">Beginner</option>
 			<option value="Intermediate">Intermediate</option>
 			<option value="Expert">Expert</option>
 
-		</select> <label>Years</label> <select name="year">
+		</select> 
+		
+		
+		<label>Years</label> 
+		<select name="year">
 			<option value="0">0</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -74,7 +80,9 @@
 			<option value="28">28</option>
 			<option value="29">29</option>
 			<option value="30">30</option>
-		</select> <label>Months</label> <select name="months">
+		</select> 
+		<label>Months</label> 
+		<select name="months">
 			<option value="0">0</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
